@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sir.Felix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product:hover {
+            background-color: #f9f9f9;
+        }
+        #productDetail {
+            display: none;
+        }
+        span{
+            font-family: 500;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GET ALL PREMIUM SOFTWARES HERE</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Service</a>
+        <a href="#products">Product</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product" onclick="showProductDetail('Product 1')">
+                    <img src="pick3.avif" alt="Product 1">
+                    <h3>Product 1</h3>
+                </div>
+                <div class="product" onclick="showProductDetail('Product 2')">
+                    <img src="lenovo-thinkpad-x1-carbon-gen10-14inch-intel-mobile.webp" alt="Lenovo Yogo 360">
+                    <h3>Lenovo Yogo 360</h3>
+                </div>
+                <div class="product" onclick="showProductDetail('Product 3')">
+                    <img src="pick2.webp" alt="hrht">
+                    <h3>Monitor Lg</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="productDetail">
+            <h2 id="productTitle"></h2>
+            <p>Here are the specifications and payment options for this product:</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            <p><span>Payment Mode:</span> PayPal, Credit Card, Mobile Money</p>
+            <button onclick="goBack()">Back to Products</button>
+        </section>
+    </div>
+
+    <script>
+        function showProductDetail(productName) {
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('productDetail').style.display = 'block';
+            document.getElementById('productTitle').textContent = productName;
+        }
+
+        function goBack() {
+            document.getElementById('productDetail').style.display = 'none';
+            document.getElementById('products').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
